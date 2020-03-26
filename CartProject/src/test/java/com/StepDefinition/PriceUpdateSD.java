@@ -23,6 +23,7 @@ PriceUpdate price=new PriceUpdate();
 	@Then("^increase the quantity of the product$")
 	public void increase_the_quantity_of_the_product() throws Throwable {
 	    price.actions();
+	    price.Screenshot("C:\\Users\\DELL\\git\\CtsProject\\CartProject\\Screenshot\\image.jpeg");
 	}
 
 	@Then("^click on refresh button$")

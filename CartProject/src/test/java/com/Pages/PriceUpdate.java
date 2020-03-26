@@ -1,8 +1,13 @@
 package com.Pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -59,6 +64,11 @@ public class PriceUpdate {
 		driver.findElement(cart).click();
 
 }
+	public void Screenshot(String path) throws IOException{
+		TakesScreenshot ts =((TakesScreenshot)driver);
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(source,new File(path));
+	}
 	public void incquan() throws InterruptedException {
 		driver.findElement(Quantity).clear();
 		driver.findElement(Quantity).sendKeys("2");
